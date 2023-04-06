@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://codnxiuplwm5t"]
+[gd_scene load_steps=4 format=3 uid="uid://codnxiuplwm5t"]
 
 [ext_resource type="Texture2D" uid="uid://y6t4844p0kjb" path="res://laser.png" id="1_1vmed"]
+[ext_resource type="PackedScene" uid="uid://by0t11yvtfq7w" path="res://explosion_creator.tscn" id="2_8n5pm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8aqme"]
 size = Vector2(7, 6)
@@ -19,5 +20,7 @@ shape = SubResource("RectangleShape2D_8aqme")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(1.78814e-07, -4.17233e-07)
 scale = Vector2(0.3, 0.3)
+
+[node name="ExplosionCreator" parent="." instance=ExtResource("2_8n5pm")]
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="queue_free"]
