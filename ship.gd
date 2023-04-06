@@ -14,3 +14,7 @@ func _process(delta):
 		var world = get_tree().current_scene
 		world.add_child(laser)
 		laser.position = position
+
+func _on_area_entered(area):
+	queue_free()
+	area.queue_free()

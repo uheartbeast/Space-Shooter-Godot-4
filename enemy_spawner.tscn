@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfueip1637gcn"]
+
+[ext_resource type="Script" path="res://enemy_spawner.gd" id="1_vg3pi"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_vg3pi")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 8)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 24)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 40)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 56)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 72)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 88)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 104)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 120)
+
+[node name="Marker2D9" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 136)
+
+[node name="Marker2D10" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 152)
+
+[node name="Marker2D11" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(0, 168)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
