@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6a4d8v6twht5"]
+
+[ext_resource type="LabelSettings" uid="uid://dy63u2qnhmrof" path="res://label_settings.tres" id="1_atman"]
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_jspth"]
+[ext_resource type="PackedScene" uid="uid://dsmgbwcjfak88" path="res://star_particles.tscn" id="2_4xyfc"]
+
+[node name="GameOverScreen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_jspth")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 73.0
+text = "GAME OVER"
+label_settings = ExtResource("1_atman")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 160.0
+offset_right = 256.0
+offset_bottom = 169.0
+text = "Press escape to return to the main menu."
+label_settings = ExtResource("1_atman")
+horizontal_alignment = 1
+
+[node name="StarParticles" parent="." instance=ExtResource("2_4xyfc")]

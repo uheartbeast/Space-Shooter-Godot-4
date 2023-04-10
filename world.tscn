@@ -32,3 +32,5 @@ position = Vector2(24, 96)
 position = Vector2(320, 0)
 
 [node name="StarParticles" parent="." instance=ExtResource("5_55au7")]
+
+[connection signal="ship_destroyed" from="Ship" to="." method="_on_ship_ship_destroyed"]

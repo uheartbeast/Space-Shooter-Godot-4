@@ -4,6 +4,8 @@ const LASER_SCENE = preload("res://laser.tscn")
 
 @export var speed = 100
 
+signal ship_destroyed
+
 func _process(delta):
 	if Input.is_action_pressed("ui_up"):
 		position.y -= speed * delta
@@ -18,3 +20,4 @@ func _process(delta):
 func _on_area_entered(area):
 	queue_free()
 	area.queue_free()
+	ship_destroyed.emit()
