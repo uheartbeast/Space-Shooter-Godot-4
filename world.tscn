@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bb1pc0dstw2he"]
 
-[ext_resource type="PackedScene" uid="uid://fvcn65dwdsxw" path="res://ship.tscn" id="1_5754e"]
+[ext_resource type="PackedScene" uid="uid://b2pfydb5rltre" path="res://ship.tscn" id="1_5754e"]
 [ext_resource type="Script" path="res://world.gd" id="1_h8hwu"]
 [ext_resource type="PackedScene" uid="uid://dfueip1637gcn" path="res://enemy_spawner.tscn" id="2_oncgw"]
 [ext_resource type="FontFile" uid="uid://b1fdgmfyw6glt" path="res://pixel_rpg.ttf" id="3_wlmdj"]
@@ -18,13 +18,8 @@ offset_bottom = 184.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Ship" parent="." instance=ExtResource("1_5754e")]
-position = Vector2(24, 96)
-
-[node name="EnemySpawner" parent="." instance=ExtResource("2_oncgw")]
-position = Vector2(320, 0)
-
 [node name="ScoreLabel" type="Label" parent="."]
+z_index = 2
 offset_left = 64.0
 offset_right = 256.0
 offset_bottom = 12.0
@@ -32,3 +27,22 @@ text = "score = 0"
 label_settings = SubResource("LabelSettings_i8y1t")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Ship" parent="." instance=ExtResource("1_5754e")]
+position = Vector2(24, 96)
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2_oncgw")]
+position = Vector2(320, 0)
+
+[node name="StarParticles" type="CPUParticles2D" parent="."]
+position = Vector2(320, 90)
+amount = 200
+lifetime = 7.0
+preprocess = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 90)
+direction = Vector2(-1, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0

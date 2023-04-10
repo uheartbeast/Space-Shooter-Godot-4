@@ -1,6 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpteyu7k6jla1"]
+[gd_scene load_steps=6 format=3 uid="uid://cpteyu7k6jla1"]
 
 [ext_resource type="Texture2D" uid="uid://nvifnx017a4y" path="res://explosion.png" id="1_fm70i"]
+[ext_resource type="AudioStream" uid="uid://bbjdpy5m5vw0g" path="res://explosion_sound.wav" id="2_8ih0a"]
+
+[sub_resource type="Animation" id="Animation_ijdy3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_3qere"]
 resource_name = "explode"
@@ -32,21 +48,6 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_ijdy3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ig5bc"]
 _data = {
 "RESET": SubResource("Animation_ijdy3"),
@@ -62,3 +63,7 @@ autoplay = "explode"
 libraries = {
 "": SubResource("AnimationLibrary_ig5bc")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8ih0a")
+autoplay = true
