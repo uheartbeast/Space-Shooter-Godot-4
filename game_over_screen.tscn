@@ -13,7 +13,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_jspth")
 
-[node name="Label" type="Label" parent="."]
+[node name="GameOverLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 64.0
@@ -23,7 +23,17 @@ text = "GAME OVER"
 label_settings = ExtResource("1_atman")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="HighscoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 256.0
+offset_bottom = 81.0
+text = "Highscore: 0"
+label_settings = ExtResource("1_atman")
+horizontal_alignment = 1
+
+[node name="EscapeLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 160.0
